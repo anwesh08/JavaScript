@@ -319,3 +319,21 @@ if (23 > 10) {
 
 const me = "Jonas"
 console.log(`I'm ${2037 - 1991} years old ${me}`)
+
+////////////////////////////////////
+// Ternary Operator
+const myAge = 23
+myAge >= 18 ? console.log("I'd like to drink wine 🍷") : console.log("I'd like to drink milk 🥛")
+
+const drink = myAge >= 18 ? 'Wine 🍷' : 'Milk 🥛'
+console.log(drink)
+
+let drink2
+if (myAge >= 18) {
+   drink2 = 'Wine 🍷'
+} else {
+   drink2 = 'Milk 🥛'
+}
+console.log(drink2)
+
+console.log(`I like to drink ${myAge >= 18 ? 'Wine 🍷' : 'Milk 🥛'}`)
