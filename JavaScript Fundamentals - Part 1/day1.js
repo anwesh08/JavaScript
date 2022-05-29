@@ -156,3 +156,26 @@ if (bornYear <= 2000) {
    century = 21
 }
 console.log(century)
+
+////////////////////////////////////
+// Type Conversion
+const inputYear = '1991'
+console.log(inputYear + 18)
+console.log(Number(inputYear) + 18, inputYear)
+
+console.log(Number('Jonas'))
+console.log(typeof NaN)
+
+console.log(String(23), 23)
+
+// Type Coercion
+console.log('I am ' + 22 + ' years old')
+console.log('I am ' + '22' + ' years old')
+console.log('23' - '10' - 3) // Coverts 23 & 10 to numbers and solve the arithmetic problem
+console.log('23' + '10' + 3) // Concatenate the strings and also convert 3 to string
+console.log('23' / '2')
+console.log('23' > '18')
+
+let n = '1' + 1
+n = n - 1
+console.log(n)
