@@ -52,3 +52,10 @@ if ((scoreDolphins === scoreKoalas) || (scoreDolphins >= 100 && scoreKoalas >= 1
 } else {
    console.log('No team wins the Trophy 🏆')
 }
+
+
+
+// Coding Challenge #4
+const bill = 430
+const tip = (bill <=30 && bill >= 50) ? (bill * 0.15) : (bill * 0.2)
+console.log(`This was ${bill}, the tip was ${tip} and the total value ${bill + tip}`)
