@@ -116,103 +116,103 @@ console.log(ageJonas, ageSarah, avgAge);
 
 ////////////////////////////////////
 // Strings and Template Literals
-const Fname = 'Jonas'
-const Job = 'Teacher'
-const dob = 1991
+const Fname = "Jonas";
+const Job = "Teacher";
+const dob = 1991;
 
-const jonas = "I'm " + Fname + ', a ' + (now - dob) + ' years old ' + Job + '!'
-console.log(jonas)
+const jonas = "I'm " + Fname + ", a " + (now - dob) + " years old " + Job + "!";
+console.log(jonas);
 
-const jonasNew = `I'm ${Fname}, a ${now - dob} years old ${Job}!`
-console.log(jonasNew)
+const jonasNew = `I'm ${Fname}, a ${now - dob} years old ${Job}!`;
+console.log(jonasNew);
 
-console.log(`Just a regular string....`)
+console.log(`Just a regular string....`);
 
-console.log('String with \n\
+console.log("String with \n\
 multiple \n\
-lines')
+lines");
 
 console.log(`String with
 Multiple
-Lines`)
+Lines`);
 
 ////////////////////////////////////
 // Taking Decisions: if / else Statements
-const sarahAge = 15
+const sarahAge = 15;
 // const isOldEnough = sarahAge >= 18
 
 if (sarahAge >= 18) {
-   console.log('Sarah can start driving licence 🚗')
+  console.log("Sarah can start driving licence 🚗");
 } else {
-   const yearsLeft = 18 - sarahAge
-   console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`)
+  const yearsLeft = 18 - sarahAge;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
 }
 
-const bornYear = 2012
-let century
+const bornYear = 2012;
+let century;
 if (bornYear <= 2000) {
-   century = 20
+  century = 20;
 } else {
-   century = 21
+  century = 21;
 }
-console.log(century)
+console.log(century);
 
 ////////////////////////////////////
 // Type Conversion
-const inputYear = '1991'
-console.log(inputYear + 18)
-console.log(Number(inputYear) + 18, inputYear)
+const inputYear = "1991";
+console.log(inputYear + 18);
+console.log(Number(inputYear) + 18, inputYear);
 
-console.log(Number('Jonas'))
-console.log(typeof NaN)
+console.log(Number("Jonas"));
+console.log(typeof NaN);
 
-console.log(String(23), 23)
+console.log(String(23), 23);
 
 // Type Coercion
-console.log('I am ' + 22 + ' years old')
-console.log('I am ' + '22' + ' years old')
-console.log('23' - '10' - 3) // Coverts 23 & 10 to numbers and solve the arithmetic problem
-console.log('23' + '10' + 3) // Concatenate the strings and also convert 3 to string
-console.log('23' / '2')
-console.log('23' > '18')
+console.log("I am " + 22 + " years old");
+console.log("I am " + "22" + " years old");
+console.log("23" - "10" - 3); // Coverts 23 & 10 to numbers and solve the arithmetic problem
+console.log("23" + "10" + 3); // Concatenate the strings and also convert 3 to string
+console.log("23" / "2");
+console.log("23" > "18");
 
-let n = '1' + 1
-n = n - 1
-console.log(n)
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
 
 ////////////////////////////////////
 // Truthy & Falsy Values
 // 5 falsy values: 0, '', undefined, null, NaN
 
-console.log(Boolean(0))
-console.log(Boolean(undefined))
-console.log(Boolean('Anwesh'))
-console.log(Boolean({}))
-console.log(Boolean(''))
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Anwesh"));
+console.log(Boolean({}));
+console.log(Boolean(""));
 
-const money = 100
+const money = 100;
 if (money) {
-   console.log("Don't spend it all")
+  console.log("Don't spend it all");
 } else {
-   console.log('You should get a job!')
+  console.log("You should get a job!");
 }
 
-let height = 0
+let height = 0;
 if (height) {
-   console.log('YAY! Height is defined')
+  console.log("YAY! Height is defined");
 } else {
-   console.log('Height is UNDEFINED')
+  console.log("Height is UNDEFINED");
 }
 
 ////////////////////////////////////
 // Equality Operators
-const personAge = '18'
+const personAge = "18";
 
 // === Strict Equality Operator
-if (personAge === 18) console.log('You just became an adult :D (strict)') 
+if (personAge === 18) console.log("You just became an adult :D (strict)");
 
 // == Loose Equality Operator
-if (personAge == 18) console.log('You just became an adult :D (loose)')
+if (personAge == 18) console.log("You just became an adult :D (loose)");
 
 // const favorite =  Number(prompt("What's your favorite number ?"))
 // console.log(favorite)
@@ -234,75 +234,75 @@ if (personAge == 18) console.log('You just became an adult :D (loose)')
 
 ////////////////////////////////////
 // Logical Operators
-const hasDriverLicense = true // A
-const hasGoodVision = true // B
+const hasDriverLicense = true; // A
+const hasGoodVision = true; // B
 
-console.log(hasDriverLicense && hasGoodVision)
-console.log(hasDriverLicense || hasGoodVision)
-console.log(!hasDriverLicense)
+console.log(hasDriverLicense && hasGoodVision);
+console.log(hasDriverLicense || hasGoodVision);
+console.log(!hasDriverLicense);
 
-const shouldDrive = hasDriverLicense && hasGoodVision
+const shouldDrive = hasDriverLicense && hasGoodVision;
 
 if (shouldDrive) {
-   console.log('Sarah is able to drive!')
+  console.log("Sarah is able to drive!");
 } else {
-   console.log('Someone else should drive...')
+  console.log("Someone else should drive...");
 }
 
 if (hasDriverLicense && hasGoodVision) {
-   console.log('Sarah is able to drive!')
+  console.log("Sarah is able to drive!");
 } else {
-   console.log('Someone else should drive...')
+  console.log("Someone else should drive...");
 }
 
-const isTired = true // C
-console.log(hasDriverLicense && hasGoodVision && isTired)
+const isTired = true; // C
+console.log(hasDriverLicense && hasGoodVision && isTired);
 
 if (hasDriverLicense && hasGoodVision && !isTired) {
-   console.log('Sarah is able to drive!')
+  console.log("Sarah is able to drive!");
 } else {
-   console.log('Someone else should drive...')
+  console.log("Someone else should drive...");
 }
 
 ////////////////////////////////////
 // Switch Statement
-const day = 'monday'
+const day = "monday";
 
 switch (day) {
-   case 'monday': // day === 'monday'
-      console.log('Plan course Structure')
-      console.log('Go to coding meetup')
-      break
-   case 'tuesday':
-      console.log('Prepare theory videos')
-      break
-   case 'wednesday':
-   case 'thursday':
-      console.log('Write code examples')
-      break
-   case 'friday':
-      console.log('Record Videos')
-      break
-   case 'saturday':
-   case 'sunday':
-      console.log('Enjoy the weekend :D')
-      break
-   default:
-      console.log('Not a valid day!')
-      break
+  case "monday": // day === 'monday'
+    console.log("Plan course Structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record Videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend :D");
+    break;
+  default:
+    console.log("Not a valid day!");
+    break;
 }
 
-if (day === 'monday') {
-   console.log('Plan course Structure')
-   console.log('Go to coding meetup')
-} else if (day === 'tuesday') {
-   console.log('Prepare theory videos')
-} else if ((day === 'wednesday') || (day === 'thursday')) {
-   console.log('Write code examples')
-} else if (day === 'friday') {
-   console.log('Record Videos')
-} else if ((day === 'saturday') || (day === 'sunday')) {
-   console.log('Enjoy the weekend :D')
+if (day === "monday") {
+  console.log("Plan course Structure");
+  console.log("Go to coding meetup");
+} else if (day === "tuesday") {
+  console.log("Prepare theory videos");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("Write code examples");
+} else if (day === "friday") {
+  console.log("Record Videos");
+} else if (day === "saturday" || day === "sunday") {
+  console.log("Enjoy the weekend :D");
 } else {
-   console.log('Not a valid day!')
+  console.log("Not a valid day!");
 }
