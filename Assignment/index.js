@@ -20,7 +20,7 @@ population += 1;
 console.log(population)
 let finPopulation = 6000000
 console.log(population > finPopulation)
-avg = 33000000
+let avg = 33000000
 console.log(population < avg)
 const description1 = 'Portugal is in Europe, and its 11 million people speak portuguese'
 console.log(description1)
