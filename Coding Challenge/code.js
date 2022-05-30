@@ -1,3 +1,4 @@
+// JavaScript Fundamentals - Part 1
 // Coding Challenge #1 && #2
 
 // Marks
@@ -59,3 +60,25 @@ if ((scoreDolphins === scoreKoalas) || (scoreDolphins >= 100 && scoreKoalas >= 1
 const bill = 430
 const tip = (bill <=30 && bill >= 50) ? (bill * 0.15) : (bill * 0.2)
 console.log(`This was ${bill}, the tip was ${tip} and the total value ${bill + tip}`)
+
+
+
+
+// JavaScript Fundamentals - Part 2
+// Coding Challenge #1
+const calcAvg = (score1, score2, score3) => (score1 + score2 + score3) / 3
+
+let avgDolphins = calcAvg(44, 23, 71)
+let avgKoalas = calcAvg(65, 54, 49)
+
+const checkWinners = function (avgDolphins, avgKoalas) {
+   if (avgDolphins >= (2 * avgKoalas)) {
+      console.log(`Dolphins win the (${avgDolphins} vs ${avgKoalas})`)
+   } else if (avgKoalas >= (2 * avgDolphins)) {
+      console.log(`Koalas win the (${avgKoalas} vs ${avgDolphins})`)
+   } else {
+      console.log('No team wins...')
+   }
+}
+checkWinners(avgDolphins, avgKoalas)
+checkWinners(576, 111)
