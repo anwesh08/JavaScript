@@ -180,3 +180,14 @@ console.log(friends.includes(23))
 if(friends.includes('Jaddu')) {
    console.log('You have a friend called Jaddu')
 }
+
+///////////////////////
+// Introduction To Objects
+const anwesh = {
+   firstName: 'Jonas',
+   lastName: 'Jadu',
+   age: 31,
+   job: 'Teacher',
+   friends: ["John", "Steve", "Micheal"]
+}
+console.log(anwesh)
