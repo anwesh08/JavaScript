@@ -191,3 +191,28 @@ const anwesh = {
    friends: ["John", "Steve", "Micheal"]
 }
 console.log(anwesh)
+
+///////////////////////
+// Dot vs Bracket Notation
+console.log(anwesh.lastName) // Dot
+console.log(anwesh['lastName']) // Bracket
+
+const nameKey = 'Name'
+console.log(anwesh['first' + nameKey])
+console.log(anwesh['last' + nameKey])
+
+// const interestedIn = prompt("What do you want to know about Anwesh? Choose between firstName, lastName, age, job, and friends")
+
+// if (jonas[interestedIn]) {
+//    console.log(anwesh[interestedIn])
+// } else {
+//    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends')
+// }
+
+anwesh.location = 'India'
+anwesh['twitter'] = '@anwesh08'
+console.log(anwesh)
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is called John"
+console.log(`${anwesh.firstName} has ${anwesh.friends.length}, and his best friend is called ${anwesh.friends[0]}`)
