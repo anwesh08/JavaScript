@@ -183,6 +183,7 @@ if(friends.includes('Jaddu')) {
 
 ///////////////////////
 // Introduction To Objects
+/*
 const anwesh = {
    firstName: 'Jonas',
    lastName: 'Jadu',
@@ -216,3 +217,34 @@ console.log(anwesh)
 // Challenge
 // "Jonas has 3 friends, and his best friend is called John"
 console.log(`${anwesh.firstName} has ${anwesh.friends.length}, and his best friend is called ${anwesh.friends[0]}`)
+*/
+
+///////////////////////
+// Object Methods
+const anwesh = {
+   firstName: 'Jonas',
+   lastName: 'Jadu',
+   birthYear: 1981,
+   job: 'Teacher',
+   friends: ["John", "Steve", "Micheal"],
+   hasDriverLicense: true,
+   // calculateAge: function(birthYear) {
+   //    return 2037 - birthYear
+   // }
+   calculateAge: function () {
+      // console.log(this)
+      this.age = 2037 - this.birthYear
+      return this.age
+   },
+   getSummary () {
+      return `${this.firstName} is a ${this.calculateAge()}-year old ${this.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license.`
+   }
+}
+
+console.log(anwesh.calculateAge())
+console.log(anwesh.age)
+// console.log(anwesh.age)
+// console.log(anwesh.age)
+console.log(anwesh.getSummary())
+
+// console.log(anwesh['calculateAge'](1991))
