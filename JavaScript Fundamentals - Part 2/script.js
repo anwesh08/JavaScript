@@ -266,3 +266,37 @@ console.log(anwesh.getSummary())
 for (let rep = 1; rep <= 10; rep++) {
    console.log(`Lifting weights repetition ${rep} 🏋️`)
 }
+
+///////////////////////
+// Looping Arrays, Breaking And Continuing
+const types = []
+for (let i = 0; i < years.length; i++) {
+   // Reading from years Array
+   console.log(years[i], typeof years[i])
+   // Filling types Array
+   // types[i] = typeof years[i] Method 1
+   types.push(typeof years[i])
+}
+console.log(types)
+
+const Years = [1991, 2007, 1969, 2020]
+const Ages = []
+
+for (let i = 0; i < Years.length; i++) {
+   Ages[i] = 2037 - Years[i]
+}
+
+console.log(Ages)
+/*
+// continue and break 
+console.log('--- ONLY STRINGS ---')
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== 'string') continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+console.log('--- BREAK WITH NUMBER ---')
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === 'number') break;
+  console.log(jonas[i], typeof jonas[i]);
+}
+*/
