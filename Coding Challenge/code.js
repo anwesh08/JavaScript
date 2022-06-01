@@ -1,4 +1,5 @@
 // JavaScript Fundamentals - Part 1
+/*
 // Coding Challenge #1 && #2
 
 // Marks
@@ -39,6 +40,7 @@ if (scoreDolphins === scoreKoalas) {
    console.log('Koalas win the Trophy 🏆')
 }
 */
+/*
 
 const scoreDolphins = (97 + 112 + 101) / 3
 const scoreKoalas = (109 + 95 + 123) / 3
@@ -126,3 +128,32 @@ if (mark.calcBMI() < john.calcBMI) {
 } else {
    console.log(`${mark.fullName}'s BMI (${mark.calcBMI()}) is higher than ${john.fullName}'s (${john.calcBMI()})!`)
 }
+
+
+
+
+// Coding Challenge #3
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+const tips = []
+const totals = []
+const calcTip = (bill) => (bill <= 300 && bill >= 50) ? (bill * 0.15) : (bill * 0.20)
+for (let index = 0; index < bills.length; index++) {
+   tips.push(calcTip(bills[index]))
+   totals.push(tips[index] + bills[index])
+}
+console.log(bills)
+console.log(tips)
+console.log(totals)
+
+function calcAverage(arr) {
+   let sum = 0
+   for (let i = 0; i < arr.length; i++) {
+      sum += arr[i]
+   }
+   return (sum / arr.length)
+}
+
+console.log(calcAverage([2, 3, 7]))
+console.log(calcAverage(totals))
+console.log(calcAverage(tips))
+*/
