@@ -149,3 +149,34 @@ console.log(age0, age1, age2)
 
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])]
 console.log(ages)
+
+///////////////////////
+// Basic Array Operations
+// Add Elements
+const newLength = friends.push('Aamir') // Push elements at last of the array
+console.log(friends)
+console.log(newLength)
+
+friends.unshift('John') // Push elements at start of the array
+console.log(friends)
+
+// Remove Elements
+friends.pop() // Remove Last Element
+const popped = friends.pop() // Remove Last Element
+console.log(popped)
+console.log(friends)
+
+friends.shift() // Remove First Element
+console.log(friends)
+
+console.log(friends.indexOf('Jaddu'))
+console.log(friends.indexOf('Jay'))
+
+friends.push(23)
+console.log(friends.includes('Jaddu'))
+console.log(friends.includes('Jay'))
+console.log(friends.includes(23))
+
+if(friends.includes('Jaddu')) {
+   console.log('You have a friend called Jaddu')
+}
