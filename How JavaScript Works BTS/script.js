@@ -1,5 +1,6 @@
 'use strict'
 
+/*
 ///////////////////////////////////////
 // Scoping in Practice
 function calcAge(birthYear) {
@@ -117,3 +118,55 @@ matilda.calAge()
 
 const f = jonas.calAge
 f()
+*/
+
+
+///////////////////////////////////////
+// Regular Functions vs. Arrow Functions
+var firstName = 'Matilda'
+
+const jonas = {
+   firstName: 'Jonas',
+   year: 1991,
+   calAge: function () {
+      console.log(this)
+      console.log(2037 - this.year)
+
+      // Solution 1
+      // const self = this // self or that
+      // const isMilleneial = function () {
+      // console.log(this)
+      //    // console.log(this.year >= 1981 && this.year <= 1996)
+      //    console.log(self.year >= 1981 && self.year <= 1996)
+      // }
+
+      // Solution 2
+      const isMilleneial = () => {
+      console.log(this)
+         console.log(this.year >= 1981 && this.year <= 1996)
+         // console.log(self.year >= 1981 && self.year <= 1996)
+      }
+      isMilleneial()
+   },
+   greet: () => {
+      console.log(this)
+      console.log(`Het ${this.firstName}`)
+   }
+}
+jonas.greet()
+jonas.calAge()
+// console.log(this.firstName)
+
+// ArgumentS Keyword
+const addExpr = function (a, b) {
+   console.log(arguments)
+   return a + b
+}
+addExpr(2, 5)
+addExpr(2, 5, 6, 7, 19)
+
+var addArrow = (a, b) => {
+   console.log(arguments)
+   return a + b
+}
+addArrow(2, 5, 8)
