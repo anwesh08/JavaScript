@@ -82,3 +82,38 @@ const z = 3
 console.log(x === window.x)
 console.log(y === window.y)
 console.log(z === window.z)
+
+///////////////////////////////////////
+// The this Keyword in Practice
+console.log(this)
+
+const calculateAge = function (birthYear) {
+   console.log(2037 - birthYear)
+   console.log(this)
+}
+calculateAge(1991)
+
+const calculateAgeArrow = birthYear => {
+   console.log(2037 - birthYear)
+   console.log(this)
+}
+calculateAgeArrow(1980)
+
+const jonas = {
+   year: 1991,
+   calAge: function () {
+      console.log(this)
+      console.log(2037 - this.year)
+   }
+}
+jonas.calAge()
+
+const matilda = {
+   year: 2017
+}
+
+matilda.calAge = jonas.calAge
+matilda.calAge()
+
+const f = jonas.calAge
+f()
