@@ -25,7 +25,7 @@ const restaurant = {
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
  // ES6 enhanced object literals
-  hours,
+  openingHours,
 
   order (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -50,6 +50,37 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+///////////////////////////////////////
+// Optional Chaining
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+   console.log(restaurant.openingHours.mon.open)
+}
+// if (restaurant.openingHours.fri) {
+//    console.log(restaurant.openingHours.fri.open)
+// }
+
+// With Optional Chaining
+console.log(restaurant.openingHours.mon?.open)
+console.log(restaurant.openingHours?.mon?.open)
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+for (const day of days) {
+   // console.log(day)
+   const open = restaurant.openingHours[day]?.open ?? 'closed'
+   console.log(`On ${day}, we open at ${open}`)
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist')
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist')
+
+// Arrays
+const users = [
+   {name: 'Jonas', email: 'hello@gmail.com'}
+]
+console.log(users[0]?.name || 'User array empty')
 
 /*
 ///////////////////////////////////////
