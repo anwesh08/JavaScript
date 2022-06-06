@@ -65,7 +65,6 @@ console.log(`This was ${bill}, the tip was ${tip} and the total value ${bill + t
 
 
 
-
 // JavaScript Fundamentals - Part 2
 // Coding Challenge #1
 const calcAvg = (score1, score2, score3) => (score1 + score2 + score3) / 3
@@ -131,7 +130,6 @@ if (mark.calcBMI() < john.calcBMI) {
 
 
 
-
 // Coding Challenge #4
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
 const tips = []
@@ -158,103 +156,136 @@ console.log(calcAverage(totals))
 console.log(calcAverage(tips))
 */
 
-
-
 // Data Structures, Modern Operators and Strings
 // Coding Challenge #1
 const game = {
-   team1: 'Bayern Munich',
-   team2: 'Borrussia Dortmund',
-   players: [
-     [
-       'Neuer',
-       'Pavard',
-       'Martinez',
-       'Alaba',
-       'Davies',
-       'Kimmich',
-       'Goretzka',
-       'Coman',
-       'Muller',
-       'Gnarby',
-       'Lewandowski',
-     ],
-     [
-       'Burki',
-       'Schulz',
-       'Hummels',
-       'Akanji',
-       'Hakimi',
-       'Weigl',
-       'Witsel',
-       'Hazard',
-       'Brandt',
-       'Sancho',
-       'Gotze',
-     ],
-   ],
-   score: '4:0',
-   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-   date: 'Nov 9th, 2037',
-   odds: {
-     team1: 1.33,
-     x: 3.25,
-     team2: 6.5,
-   },
- };
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
 //  1.
- const [players1, players2] = game.players
- console.log(players1, players2)
+const [players1, players2] = game.players;
+console.log(players1, players2);
 
 //  2.
- const [gk, ...fieldPlayers] = players1
- console.log(gk, fieldPlayers)
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
 
 //  3.
- const allPlayers = [...players1, ...players2]
- console.log(allPlayers)
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
 
 //  4.
- const finalPlayers = [...players1, 'Thiago', 'Coutinho', 'Peristic']
+const finalPlayers = [...players1, "Thiago", "Coutinho", "Peristic"];
 
 //  5.
- const {odds: {team1, x: draw, team2}} = game
- console.log(team1, draw, team2)
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
 
 //  6.
- const printGoals = function (...Players) {
-    console.log(Players)
-    console.log(`${Players.length} goals were scored`)
- }
- printGoals('Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels')
- printGoals('Lewandowski', 'Hummels')
- printGoals(...game.scored)
+const printGoals = function (...Players) {
+  console.log(Players);
+  console.log(`${Players.length} goals were scored`);
+};
+printGoals("Lewandowski", "Gnarby", "Lewandowski", "Hummels");
+printGoals("Lewandowski", "Hummels");
+printGoals(...game.scored);
 
 //  7.
-team1 < team2 && console.log(`Team 1 is more likely to win`)
-team1 > team2 && console.log(`Team 2 is more likely to win`)
-
-
+team1 < team2 && console.log(`Team 1 is more likely to win`);
+team1 > team2 && console.log(`Team 2 is more likely to win`);
 
 // Coding Challenge #2
 // 1.
-const goalPlayers = [...game.scored]
+const goalPlayers = [...game.scored];
 for (const [i, playersName] of goalPlayers.entries()) {
-   console.log(`Goal ${i + 1}: ${playersName}`)
+  console.log(`Goal ${i + 1}: ${playersName}`);
 }
 
 // 2.
-const odds = Object.values(game.odds)
-let avg = 0
+const odds = Object.values(game.odds);
+let avg = 0;
 for (const odd of odds) {
-   avg += odd
+  avg += odd;
 }
-avg /= odds.length
-console.log(avg)
+avg /= odds.length;
+console.log(avg);
 
 // 3.
 for (const [team, odd] of Object.entries(game.odds)) {
-   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`
-   console.log(`Odd of ${teamStr}: ${odd}`)
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+
+// Coding Challenge #3
+const gameEvents = new Map([
+  [17, "⚽️ GOAL"],
+  [36, "🔁 Substitution"],
+  [47, "⚽️ GOAL"],
+  [61, "🔁 Substitution"],
+  [64, "🔶 Yellow card"],
+  [69, "🔴 Red card"],
+  [70, "🔁 Substitution"],
+  [72, "🔁 Substitution"],
+  [76, "⚽️ GOAL"],
+  [80, "⚽️ GOAL"],
+  [92, "🔶 Yellow card"],
+]);
+
+// 1.
+const events = [...new Set(gameEvents.values())]
+console.log(events)
+
+// 2.
+gameEvents.delete(64)
+console.log(...gameEvents)
+
+// 3.
+console.log(`An event happened, on average, every ${90 / gameEvents.size} minutes`)
+const time = [...gameEvents.keys()].pop()
+console.log(time)
+console.log(`An event happened, on average, every ${time / gameEvents.size} minutes`)
+
+// 4.
+for (const [min, event] of gameEvents) {
+   const half = min <= 45 ? 'First' : 'Second'
+   console.log(`[${half} HALF] ${min}: ${event}`)
 }
