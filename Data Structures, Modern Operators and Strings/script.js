@@ -1,21 +1,21 @@
 'use strict';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
-   [weekdays[3]]: {
-     open: 12,
-     close: 22,
-   },
-   [weekdays[4]]: {
-     open: 11,
-     close: 23,
-   },
-   [weekdays[5]]: {
-     open: 0,
-     close: 24,
-   },
- }
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 24,
+  },
+};
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -24,32 +24,56 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
- // ES6 enhanced object literals
+  // ES6 enhanced object literals
   openingHours,
 
-  order (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order Received ! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
-  orderPasta (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
-  orderPizza (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
 };
+
+/*
+///////////////////////////////////////
+// Looping Objects: Object Keys, Values, and Entries
+
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property Values
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire Object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+// [key, value]
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
 
 ///////////////////////////////////////
 // Optional Chaining
@@ -82,7 +106,6 @@ const users = [
 ]
 console.log(users[0]?.name || 'User array empty')
 
-/*
 ///////////////////////////////////////
 // The for-of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
@@ -94,6 +117,33 @@ for (const [i, el] of menu.entries()) {
 }
 
 // console.log([...menu.entries()])
+
+///////////////////////////////////////
+// Logical Assignment Operators
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+// nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+// AND assignment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+console.log(rest1);
+console.log(rest2);
 
 ///////////////////////////////////////
 // The Nullish Coalescing Operator
