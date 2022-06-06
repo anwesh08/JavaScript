@@ -154,7 +154,8 @@ function calcAverage(arr) {
 console.log(calcAverage([2, 3, 7]))
 console.log(calcAverage(totals))
 console.log(calcAverage(tips))
-*/
+
+
 
 // Data Structures, Modern Operators and Strings
 // Coding Challenge #1
@@ -289,3 +290,21 @@ for (const [min, event] of gameEvents) {
    const half = min <= 45 ? 'First' : 'Second'
    console.log(`[${half} HALF] ${min}: ${event}`)
 }
+*/
+
+// Coding Challenge #4
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document.querySelector("button").addEventListener("click", () => {
+  const text = document.querySelector("textarea").value;
+  const rows = text.split("\n");
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
