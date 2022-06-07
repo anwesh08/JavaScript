@@ -8,7 +8,7 @@
   </head>
   <style>
     body {
-      height: 100vh;
+      height: 97.5vh;
       display: flex;
       align-items: center;
       background: linear-gradient(to top left, #28b487, #7dd56f);
@@ -22,7 +22,7 @@
       text-align: center;
       color: white;
     }
-    button {
+    /* button {
       width: 50px;
       height: 20px;
       margin: 10px;
@@ -30,10 +30,25 @@
     textarea {
       width: 300px;
       height: 100px;
+    } */
+    .buy,
+    .poll {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      position: absolute;
+      top: 2rem;
+    }
+    .buy {
+      left: 2rem;
+    }
+    .poll {
+      right: 2rem;
     }
   </style>
   <body>
     <h1>Coding Challenge</h1>
+    <button class="buy">Buy new plane 🛩</button>
+    <button class="poll">Answer poll ⁉️</button>
     <script src="code.js"></script>
   </body>
 </html>
