@@ -114,7 +114,6 @@ greet('Hello')('Jonas')
 
 const greetArr = greeting => name => console.log(`${greeting} ${name}`)
 greetArr('Hello')('Jonas')
-*/
 
 ///////////////////////////////////////
 // The call and apply Methods
@@ -208,3 +207,25 @@ console.log(addVAT(1330))
 const addTaxRate = rate => value => value + value * rate
 const addVAT2 = addTaxRate(0.23)
 console.log(addVAT2(100))
+*/
+
+///////////////////////////////////////
+// Immediately Invoked Function Expressions (IIFE)
+const runOnce = () => {
+   console.log('This will never run again')
+}
+runOnce();
+
+// IIFE
+(function() {
+   console.log('This will never run again')
+})();
+
+(() => console.log('This will never run again'))()
+
+{
+   const isPrivate = 23
+   var notPrivate = 34
+}
+// console.log(isPrivate)
+console.log(notPrivate)
