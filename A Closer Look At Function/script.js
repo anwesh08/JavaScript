@@ -1,5 +1,6 @@
 'use strict'
 
+/*
 ///////////////////////////////////////
 // Default Parameters
 const bookings = []
@@ -59,3 +60,35 @@ const newPassport = function(person) {
 
 newPassport(anwesh)
 checkIn(flight, anwesh)
+*/
+
+///////////////////////////////////////
+// Functions Accepting Callback Functions
+const oneWord = function (str) {
+   return str.replace(/ /g, '').toLowerCase()
+}
+
+const upperFirstWord = function (str) {
+   const [first, ...others] = str.split(' ')
+   return [first.toUpperCase(), ...others].join(' ')
+}
+
+// Higher-Order Function
+const transform = function (str, fn) {
+   console.log(`Original String: ${str}`)
+   console.log(`Transformed String: ${fn(str)}`)
+   console.log(`Transformed By: ${fn.name}`)
+}
+
+transform('JavaScript is the best!', upperFirstWord)
+
+transform('JavaScript is the best!', oneWord)
+
+// JS uses callbacks all the time
+const high5 = () => {
+   console.log('👋')
+}
+
+document.body.addEventListener('click', high5)
+
+// ['Jonas', 'Martha', 'Adam'].foreach(high5)
