@@ -82,13 +82,38 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-currencies.forEach( (value, key, map) => {
-  console.log(`${key}: ${value}`)
-})
+currencies.forEach((value, key, map) => {
+  console.log(`${key}: ${value}`);
+});
 
 // Set
-const currenciesUnique = new Set (['USD', 'GBP', 'USD', 'EUR', 'EUR'])
-console.log(currenciesUnique)
-currenciesUnique.forEach( (value, _, map) => {
-  console.log(`${value}: ${value}`)
-})
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach((value, _, map) => {
+  console.log(`${value}: ${value}`);
+});
+
+///////////////////////////////////////
+// The map Method
+const euroToUSD = 1.1;
+
+// const movementsUSD = movements.map( (mov) => {
+//   return Math.trunc(mov * euroToUSD)
+// })
+
+const movementsUSD = movements.map(mov => Math.trunc(mov * euroToUSD));
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(Math.trunc(mov * euroToUSD));
+}
+console.log(movementsUSDfor);
+
+const movementsDescription = movements.map( (mov, i) => 
+  `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrawal'} ${Math.abs(mov)}`
+)
+
+console.log(movementsDescription)
