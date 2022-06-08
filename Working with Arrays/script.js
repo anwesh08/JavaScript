@@ -82,14 +82,14 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-currencies.forEach((value, key, map) => {
+currencies.forEach((value, key) => {
   console.log(`${key}: ${value}`);
 });
 
 // Set
 const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
 console.log(currenciesUnique);
-currenciesUnique.forEach((value, _, map) => {
+currenciesUnique.forEach((value, _) => {
   console.log(`${value}: ${value}`);
 });
 
@@ -141,7 +141,7 @@ console.log(withdrawals)
 // The reduce Method
 console.log(movements)
 // Accumulator -> SNOWBALL
-const balance = movements.reduce( (acc, cur, i, arr) => {
+const balance = movements.reduce( (acc, cur, i) => {
   console.log(`Iteration ${i}: ${acc}`)
   return acc + cur
 }, 0)
@@ -153,3 +153,13 @@ for (const [i, mov] of movements.entries()) {
   sum += mov
 }
 console.log(sum)
+
+// Maximum value
+const max = movements.reduce( (acc, mov) => {
+  if (acc > mov) {
+    return acc
+  } else {
+    return mov
+  }
+}, movements[0])
+console.log(max)
