@@ -1,16 +1,6 @@
 'use strict';
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-
-/////////////////////////////////////////////////
 // Simple Array Methods
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
@@ -82,3 +72,23 @@ movements.forEach((movement, index) => {
 // 1: function(450)
 // 2: function(400)
 // ...
+
+///////////////////////////////////////
+// forEach With Maps and Sets
+// Map
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach( (value, key, map) => {
+  console.log(`${key}: ${value}`)
+})
+
+// Set
+const currenciesUnique = new Set (['USD', 'GBP', 'USD', 'EUR', 'EUR'])
+console.log(currenciesUnique)
+currenciesUnique.forEach( (value, _, map) => {
+  console.log(`${value}: ${value}`)
+})
