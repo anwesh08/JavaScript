@@ -136,3 +136,20 @@ console.log(depositsFor)
 
 const withdrawals = movements.filter( mov => mov < 0)
 console.log(withdrawals)
+
+///////////////////////////////////////
+// The reduce Method
+console.log(movements)
+// Accumulator -> SNOWBALL
+const balance = movements.reduce( (acc, cur, i, arr) => {
+  console.log(`Iteration ${i}: ${acc}`)
+  return acc + cur
+}, 0)
+console.log(balance)
+
+let sum = 0
+for (const [i, mov] of movements.entries()) {
+  console.log(`Iteration ${i}: ${sum}`)
+  sum += mov
+}
+console.log(sum)
