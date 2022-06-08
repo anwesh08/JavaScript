@@ -112,54 +112,70 @@ for (const mov of movements) {
 }
 console.log(movementsUSDfor);
 
-const movementsDescription = movements.map( (mov, i) => 
-  `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrawal'} ${Math.abs(mov)}`
-)
+const movementsDescription = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrawal'} ${Math.abs(
+      mov
+    )}`
+);
 
-console.log(movementsDescription)
+console.log(movementsDescription);
 
 ///////////////////////////////////////
 // The filter Method
-const deposits = movements.filter( mov => {
-  return mov > 0
-})
-console.log(movements)
-console.log(deposits)
+const deposits = movements.filter(mov => {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
 
-const depositsFor = []
+const depositsFor = [];
 for (const mov of movements) {
   if (mov > 0) {
-    depositsFor.push(mov)
+    depositsFor.push(mov);
   }
 }
-console.log(depositsFor)
+console.log(depositsFor);
 
-const withdrawals = movements.filter( mov => mov < 0)
-console.log(withdrawals)
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
 
 ///////////////////////////////////////
 // The reduce Method
-console.log(movements)
+console.log(movements);
 // Accumulator -> SNOWBALL
-const balance = movements.reduce( (acc, cur, i) => {
-  console.log(`Iteration ${i}: ${acc}`)
-  return acc + cur
-}, 0)
-console.log(balance)
+const balance = movements.reduce((acc, cur, i) => {
+  console.log(`Iteration ${i}: ${acc}`);
+  return acc + cur;
+}, 0);
+console.log(balance);
 
-let sum = 0
+let sum = 0;
 for (const [i, mov] of movements.entries()) {
-  console.log(`Iteration ${i}: ${sum}`)
-  sum += mov
+  console.log(`Iteration ${i}: ${sum}`);
+  sum += mov;
 }
-console.log(sum)
+console.log(sum);
 
 // Maximum value
-const max = movements.reduce( (acc, mov) => {
+const max = movements.reduce((acc, mov) => {
   if (acc > mov) {
-    return acc
+    return acc;
   } else {
-    return mov
+    return mov;
   }
-}, movements[0])
-console.log(max)
+}, movements[0]);
+console.log(max);
+
+///////////////////////////////////////
+// The Magic of Chaining Methods
+// Pipeline
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  // .map(mov => mov * euroToUSD)
+  .map((mov, i, arr) => {
+    console.log(arr)
+    return mov * euroToUSD
+  })
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD)
