@@ -359,7 +359,7 @@ poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]})
       header.style.color = 'blue'
    })
 })();
-*/
+
 
 // Working with Arrays
 // Coding Challenge #1
@@ -406,3 +406,4 @@ const calcAverageHumanAges = (ages) =>
 const avg_1 = calcAverageHumanAges([5, 2, 4, 1, 15, 8, 3]);
 const avg_2 = calcAverageHumanAges([16, 6, 10, 5, 6, 1, 4]);
 console.log(avg_1, avg_2);
+*/
