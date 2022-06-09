@@ -264,3 +264,38 @@ console.log(movements)
 // })
 movements.sort((a, b) => b - a)
 console.log(movements)
+
+///////////////////////////////////////
+// More Ways of Creating and Filling Arrays
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 9])
+console.log(new Array(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+// Empty Arrays + fill method
+const x = new Array(7)
+console.log(x)
+console.log(x.map(() => 5))
+
+x.fill(4, 2, 6)
+console.log(x)
+
+// Array.from
+const y = Array.from({length: 7}, () => 1)
+console.log(y)
+
+const z = Array.from({length: 7}, (_, i) => i + 1)
+console.log(z)
+
+let sorted = false;
+btnSort.addEventListener('click', e => {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
+// labelBalance.addEventListener('click', () => {
+//   const movementsUI = Array.from(
+//     document.querySelectorAll('.movements__value'),
+//     el => Number(el.textContent.replace('€', ''))
+//   );
+//   console.log(movementsUI)
+// });
