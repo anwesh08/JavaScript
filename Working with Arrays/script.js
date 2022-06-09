@@ -209,3 +209,21 @@ console.log(movements.filter(deposit))
 
 ///////////////////////////////////////
 // Flat and FlatMap
+const array = [[1, 2, 3], [4, 5, 6], 7, 8]
+console.log(array.flat())
+
+const arrayDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8]
+console.log(arrayDeep.flat(2))
+
+// flat
+// const overalBalance = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+// flatMap
+// const overalBalance2 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance2);
