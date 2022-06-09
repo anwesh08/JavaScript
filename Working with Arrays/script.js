@@ -227,3 +227,40 @@ console.log(arrayDeep.flat(2))
 //   .flatMap(acc => acc.movements)
 //   .reduce((acc, mov) => acc + mov, 0);
 // console.log(overalBalance2);
+
+///////////////////////////////////////
+// Sorting Arrays
+const owners = ['Jonas', 'Jack', 'Adam', 'Martha']
+console.log(owners.sort())
+console.log(owners)
+
+// Numbers
+console.log(movements)
+// console.log(movements.sort())
+
+// return < 0  (A, B) (Keep Order)
+// return > 0  (B, A) (Switch Order)
+
+// Ascending
+// movements.sort((a, b) => {
+//   if (a > b) {
+//     return 1
+//   }
+//   if (a < b) {
+//     return -1
+//   }
+// })
+movements.sort((a, b) => a - b)
+console.log(movements)
+
+// Descending
+// movements.sort((a, b) => {
+//   if (a > b) {
+//     return -1
+//   }
+//   if (a < b) {
+//     return 1
+//   }
+// })
+movements.sort((a, b) => b - a)
+console.log(movements)
