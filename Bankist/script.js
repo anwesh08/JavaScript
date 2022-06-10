@@ -145,11 +145,6 @@ const updateUI = acc => {
 // Event Handler
 let currentAccount;
 
-// Fake Always Logged in
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 1;
-
 btnLogin.addEventListener('click', e => {
   // Prevent form from submitting
   e.preventDefault();
