@@ -209,12 +209,36 @@ console.log(days1);
 const number = 38293742.23;
 
 const options = {
-   style: 'currency',
-   unit: 'celsius',
-   currency: 'EUR',
-}
+  style: "currency",
+  unit: "celsius",
+  currency: "EUR",
+};
 
 console.log("US: ", new Intl.NumberFormat("en-US", options).format(number));
-console.log("Germany: ", new Intl.NumberFormat("de-DE", options).format(number));
+console.log(
+  "Germany: ",
+  new Intl.NumberFormat("de-DE", options).format(number)
+);
 console.log("Syria: ", new Intl.NumberFormat("ar-SY", options).format(number));
-console.log(navigator.language, new Intl.NumberFormat(navigator.language, options).format(number));
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language, options).format(number)
+);
+
+///////////////////////////////////////
+// Timers
+// setTimeout
+const ingredients = ["olives", "spinach"];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your Pizza! with ${ing1} and ${ing2}🍕`),
+  3000,
+  ...ingredients
+);
+console.log("Waiting...");
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer)
+
+// setInterval
+setInterval( () => {
+   const newDate = new Date()
+   console.log(newDate)
+}, 3000)

@@ -86,13 +86,13 @@ const formatMovementDate = (date, locale) => {
     // const month = `${date.getMonth() + 1}`.padStart(2, 0);
     // const year = date.getFullYear();
     // return `${day}/${month}/${year}`;
-    return new Intl.DateTimeFormat(locale).format(date)
+    return new Intl.DateTimeFormat(locale).format(date);
   }
 };
 
 const formatCur = function (value, locale, currency) {
   return new Intl.NumberFormat(locale, {
-    style: "currency",
+    style: 'currency',
     currency: currency,
   }).format(value);
 };
@@ -106,7 +106,7 @@ const displayMovements = (accs, sort = false) => {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const date = new Date(accs.movementsDates[i]);
     const displayDate = formatMovementDate(date, accs.locale);
-    const formattedMov = formatCur(mov, accs.locale, accs.currency)
+    const formattedMov = formatCur(mov, accs.locale, accs.currency);
     const html = `
     <div class="movements__row">
       <div class="movements__type movements__type--${type}">${
@@ -122,7 +122,11 @@ const displayMovements = (accs, sort = false) => {
 
 const calcDisplayBalance = accs => {
   accs.balance = accs.movements.reduce((acc, mov) => acc + mov);
-  labelBalance.textContent = formatCur(accs.balance, accs.locale, accs.currency);
+  labelBalance.textContent = formatCur(
+    accs.balance,
+    accs.locale,
+    accs.currency
+  );
 };
 
 const calcDisplaySummary = accs => {
@@ -134,14 +138,22 @@ const calcDisplaySummary = accs => {
   const outcomes = accs.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = formatCur(Math.abs(outcomes), accs.locale, accs.currency);
+  labelSumOut.textContent = formatCur(
+    Math.abs(outcomes),
+    accs.locale,
+    accs.currency
+  );
 
   const interest = accs.movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * accs.interestRate) / 100)
     .filter(int => int >= 1)
     .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = formatCur(interest, accs.locale, accs.currency);
+  labelSumInterest.textContent = formatCur(
+    interest,
+    accs.locale,
+    accs.currency
+  );
 };
 
 const createUserName = accs => {
@@ -197,9 +209,10 @@ btnLogin.addEventListener('click', e => {
       year: 'numeric',
       // weekday: 'long',
     };
-    labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(
-      now
-    );
+    labelDate.textContent = new Intl.DateTimeFormat(
+      currentAccount.locale,
+      options
+    ).format(now);
     // Clear Input Fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
@@ -235,12 +248,14 @@ btnLoan.addEventListener('click', e => {
   e.preventDefault();
   const amount = Math.floor(inputLoanAmount.value);
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add Movement
-    currentAccount.movements.push(amount);
-    // Add Loan Date
-    currentAccount.movementsDates.push(new Date().toISOString());
-    // Update UI
-    updateUI(currentAccount);
+    setTimeout(() => {
+      // Add Movement
+      currentAccount.movements.push(amount);
+      // Add Loan Date
+      currentAccount.movementsDates.push(new Date().toISOString());
+      // Update UI
+      updateUI(currentAccount);
+    }, 5000);
   }
   inputLoanAmount.value = '';
 });
