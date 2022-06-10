@@ -192,3 +192,12 @@ console.log(Date.now())
 
 future.setFullYear(2040)
 console.log(future)
+
+///////////////////////////////////////
+// Operations With Dates
+console.log(+(future))
+
+const daysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000 * 60 * 60 * 24)
+
+const days1 = daysPassed(new Date(2037, 3 , 14), new Date(2037, 3, 24))
+console.log(days1)
