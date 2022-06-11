@@ -20,6 +20,7 @@
 
 // Creating and inserting elements
 // .insertAdjacentHTML
+/*
 const header = document.querySelector('h1');
 
 const message = document.createElement('div');
@@ -87,3 +88,27 @@ document.documentElement.style.setProperty('--color-primary', 'orangered')
 
 // Don't use
 // logo.clasName = 'jonas';
+*/
+
+///////////////////////////////////////
+// Types of Events and Event Handlers
+const h1 = document.querySelector('h1')
+// h1.addEventListener('mouseenter', (e) => {
+//    alert('addEventListener: Great! You are reading the heading :D')
+// })
+
+const alertH1 = () => {
+   alert('addEventListener: Great! You are reading the heading :D')
+   // h1.removeEventListener('mouseenter', alertH1)
+}
+
+h1.addEventListener('mouseenter', alertH1)
+
+setTimeout(() => {
+   h1.removeEventListener('mouseenter', alertH1)
+}, 3000)
+
+// h1.onmouseover = (e) => {
+//    console.log(e)
+//    alert('addEventListener: Great! You are reading the heading :D')
+// }
