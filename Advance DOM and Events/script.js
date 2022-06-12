@@ -137,3 +137,14 @@ document.querySelector('.nav__link').addEventListener('click', function (e) {
    console.log('NAV', e.target, e.currentTarget);
  });
  */
+
+ ///////////////////////////////////////
+// Page navigation
+document.querySelectorAll('.nav__link').forEach((element) => {
+  element.addEventListener('click', (e) => {
+    e.preventDefault()
+    const id = e.target.getAttribute('href')
+    console.log(id)
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' })
+  })
+});

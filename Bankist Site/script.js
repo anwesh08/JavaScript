@@ -40,5 +40,15 @@ btnScrollTo.addEventListener('click', () => {
    section1.scrollIntoView({ behavior: "smooth" })
 })
 
-///////////////////////////////////////
+ ///////////////////////////////////////
 // Page navigation
+document.querySelector('.nav__links').addEventListener('click', e => {
+  e.preventDefault()
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href')
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' })
+  }
+})
+
+///////////////////////////////////////
+// Tabbed component
