@@ -406,7 +406,7 @@ const calcAverageHumanAges = (ages) =>
 const avg_1 = calcAverageHumanAges([5, 2, 4, 1, 15, 8, 3]);
 const avg_2 = calcAverageHumanAges([16, 6, 10, 5, 6, 1, 4]);
 console.log(avg_1, avg_2);
-*/
+
 
 // Coding Challenge #4
 const dogs = [
@@ -451,3 +451,30 @@ console.log(dogs.filter(checkEatingOkay))
 // 8.
 const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood)
 console.log(dogsSorted)
+*/
+
+
+
+// OOPs with JavaScript
+// Coding Challenge #1
+const Car = function(make, speed) {
+  this.make = make
+  this.speed = speed
+}
+Car.prototype.accelerate = function() {
+  this.speed += 10
+  console.log(`${this.make} is going at ${this.speed} km/hr`)
+}
+Car.prototype.brake = function() {
+  this.speed -= 5
+  console.log(`${this.make} is going at ${this.speed} km/hr`)
+}
+
+const car1 = new Car('BMW', 120)
+const car2 = new Car('Mercedes', 95)
+
+car1.accelerate()
+car1.accelerate()
+car1.brake()
+car1.accelerate()
+car1.brake()
