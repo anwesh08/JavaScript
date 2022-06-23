@@ -91,10 +91,14 @@ const renderCountry = (data, className = '') => {
  };
  
  getCountryAndNeighbour('usa');
-  */
 
  ///////////////////////////////////////
 // Consuming Promises
-// Chaining Promises
-// Handling Rejected Promises
-// Throwing Errors Manually
+
+const getCountryData = country => {
+   fetch(`https://restcountries.com/v2/name/${country}`)
+     .then(response => response.json())
+     .then(data => renderCountry(data[0]))
+ };
+ getCountryData('portugal');
+*/
