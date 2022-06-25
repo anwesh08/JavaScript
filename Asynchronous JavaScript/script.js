@@ -173,4 +173,33 @@ const getCountryData = country => {
 btn.addEventListener('click', () => {
   getCountryData('germany');
 });
+
+// Throwing Errors Manually
+const getCountryData = function (country) {
+  getJSON(
+    `https://restcountries.com/v2/name/${country}`,
+    'Country Not Found'
+  )
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders[0];
+      if (!neighbour) throw new Error('No new neighbour found!');
+      return getJSON(
+        `https://restcountries.com/v2/alpha/${neighbour}`,
+        'Country Not Found'
+      );
+    })
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.log(`${err} 💥💥💥`);
+      renderError(`Something went wrong 💥💥💥 ${err.message}. Try Again!`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
+};
+
+btn.addEventListener('click', () => {
+  getCountryData('germany');
+});
 */
