@@ -550,7 +550,8 @@ tesla.chargeBattery(90);
 console.log(tesla);
 tesla.brake();
 tesla.accelerate()
-*/
+
+
 
 // Coding Challenge #4
 class CarCl {
@@ -608,3 +609,32 @@ rivian
   .accelerate();
 
 console.log(rivian.speedUS);
+
+
+
+// Asynchronous JavaScript
+// Coding Challenge #1
+const whereAmI = (lat, lng) => {
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      console.log(`You are in ${data.city}, ${data.country}`);
+      return fetch(`https://restcountries.com/v2/name/${data.country}`)
+    })
+    .then((response) => {
+      console.log(response);
+      if (!response.ok)
+        throw new Error(`Country Not Found (${response.status})`);
+      return response.json();
+    })
+    .then(data => renderCountry(data[0]))
+    .catch((err) => console.error(`${err.message}💥`));
+};
+whereAmI(52.508, 13.381);
+whereAmI(19.037, 72.873);
+whereAmI(-33.933, 18.474);
+*/
