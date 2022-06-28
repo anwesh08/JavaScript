@@ -202,7 +202,6 @@ const getCountryData = function (country) {
 btn.addEventListener('click', () => {
   getCountryData('germany');
 });
-*/
 
 ///////////////////////////////////////
 // The Event Loop in Practice
@@ -213,3 +212,38 @@ Promise.resolve('Resolved promise 2').then(res => {
   for (let i = 0; i < 1000000000; i++) {}
   console.log(res);
 });
+*/
+
+console.log('Test end');
+
+///////////////////////////////////////
+// Building a Simple Promise
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('Lottery Draw is happening 🔮')
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve('You Win 💰');
+    } else {
+      reject(new Error('You lost you money 💩'));
+    }
+  }, 2000);
+});
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+// Promisifying setTimeout
+const wait = function(seconds) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, seconds * 1000)
+  })
+}
+
+wait(5).then(() => {
+  console.log('I waited for 5 seconds')
+  return wait(4)
+})
+  .then(() => console.log('I waited for 4 seconds'))
+
+  
+Promise.resolve('abc').then(x => console.log(x));
+Promise.reject(new Error('Problem!')).catch(x => console.error(x));
